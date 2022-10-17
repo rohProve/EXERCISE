@@ -1,7 +1,17 @@
 package tryThis;
 
 public class ExerciseFor {
-	
+	public static boolean isPrime(int num) {
+		if(num == 2) return true;
+		
+		if(num == 1) return false;
+		if(num % 2 == 0) return false;
+		
+		for(int i = 3; i <= num - 1; i += 2){
+			if(num % i == 0) return false;
+		}
+		return true;
+	}
 	public static void main(String[] args) {
 		
 		// 1부터 100까지 합
@@ -83,5 +93,15 @@ public class ExerciseFor {
 			}
 			System.out.println("");
 		}
+		
+		// 1 ~ 100 사이에 존재하는 소수의 합
+		int primeSum = 0; 
+		for(int i = 2; i < 100; i++){
+			if(isPrime(i)){
+				primeSum += i;
+				System.out.println(primeSum);
+			}
+		}
 	}
+
 }
